@@ -1,4 +1,6 @@
-import Form from "./js/components/Form";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import App from "./js/components/App";
 
 const wrapper = document.getElementById("container");
-wrapper ? ReactDOM.render(<Form />, wrapper) : false;
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
