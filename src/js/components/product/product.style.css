@@ -1,0 +1,14 @@
+.form-row{
+    width: 50%;
+    margin: 5px ;
+    
+}
+.form-row label{
+    font-size: 13px;;
+}
+.form-row input{
+    border: 1px solid #000;
+}
+.btns{
+    float:right;
+}
