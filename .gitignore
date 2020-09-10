@@ -4,4 +4,4 @@ main
 node_modules
 temp
 update
-dist/*.update.js
+dist/*.update.js.*
