@@ -34,7 +34,7 @@
     "apollo-boost": "^0.4.9",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.6.0",
-    "electron": "^9.1.1",
+    "electron": "^9.3.0",
     "fs": "0.0.1-security",
     "glob": "^7.1.6",
     "graphql": "^15.3.0",
