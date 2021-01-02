@@ -5,3 +5,5 @@ node_modules
 temp
 update
 dist/*.update.js.*
+dist/*.hot-update.*
+yarn.lock

@@ -1,0 +1,19 @@
+.search-result{
+    overflow-y: scroll !important;
+    max-height: 100px;
+}
+.search-result-div{
+    overflow: hidden !important;
+    /* max-height: 0px; */
+}
+
+.search-group-item.active, .search-group-item.selected {
+    color: #fff;
+    background-color: #116cd6;
+}
+.search-group-item {
+    padding: 5px;
+    /* font-size: 12px; */
+    color: #414142;
+    border-top: 1px solid #ddd;
+}

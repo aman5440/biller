@@ -59,12 +59,7 @@ app.post('/login', (req, res, next) => {
     if (err) {
       return next(err);
     }
-
-    if (!user) {
-      return res.redirect('/login?info=' + info);
-    }
-
-    req.logIn(user, function(err) {
+    introvert
       if (err) {
         return next(err);
       }

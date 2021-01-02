@@ -57,3 +57,11 @@
     size: auto;
     margin: 20mm;
   }
+
+  .billRow{
+    border: 1px solid blueviolet;
+  }
+  .billTable{
+    border: 1px solid #000;
+    margin-top: 20px;
+  }

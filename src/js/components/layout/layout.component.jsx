@@ -6,7 +6,7 @@ export default function LayoutComponent({children}) {
   return (
     <div>
         <HeaderComponent />
-        <div className="container">{children}</div>
+        <div className="container-fluid">{children}</div>
         <FooterComponent />
     </div>
   );

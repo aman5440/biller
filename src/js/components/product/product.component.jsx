@@ -6,6 +6,7 @@ const product = function Product() {
   return (
     <LayoutComponent>
         Products List
+       
     </LayoutComponent>
   );
 }

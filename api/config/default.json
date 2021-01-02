@@ -1,0 +1,6 @@
+{
+    "mongo_uri"     :   "mongodb://31.220.57.187/biller",
+    "user"          :   "myUserAdmin",
+    "pass"          :   "N0p@sword",
+    "authdb"        :   "admin"
+}
