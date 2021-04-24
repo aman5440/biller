@@ -13,9 +13,9 @@ mongoose.connect(mongo_uri,
     {   
         // useNewUrlParser:true,
         // useUnifiedTopology: true,
-        auth: {authdb: 'admin'},
-        "user": "myUserAdmin",
-        "pass": "N0p@sword"
+        //auth: {authdb: 'admin'},
+        // "user": "myUserAdmin",
+        // "pass": "N0p@sword"
     }).then((res)=>{
 }).catch(err=> console.log('Err in conn',err));
 
@@ -25,10 +25,7 @@ app.use(express.json())
 app.use('/product',productRouter);
 
 let port = process.env.port || 3000 ;
-app.get('/',(req,res)=>{
-    res.send('Hello Bro');
-    console.log('I am global listener');
-});
+
 app.listen(port,()=>{
     console.log('Yes am listening');
 })

@@ -13,6 +13,11 @@ const getProducts = async() =>{
     return products;
 }
 
+const getSingleProduct = async (id) => {
+    const product = await Product.find({_id:mongoose.Types.ObjectId(id)}).select({ "title": 1, "quantity": 1, "price": 1});
+    return product;
+}
+
 const deleteProduct = (id) => {
     console.log('delete me',id);
     return Product.deleteOne({_id:mongoose.Types.ObjectId(id)});
@@ -23,6 +28,13 @@ router.get('/all',async (req, res) => {
     console.log('products~~>',products);
     res.send(products)
 })
+
+//GET A SINGLE
+router.get('/get/:id',async (req, res)=>{
+    let product = await getSingleProduct(req.params.id);
+    res.send(product)
+
+});
 
 //CREATE NEW ITEM
 router.post('/create',async (req, res) => {

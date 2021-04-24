@@ -36,13 +36,36 @@ createTheme('solarized', {
 
 
 
-let clickHandler = (row) => {
-  console.log('am row~~>',row);
-  axios.delete(`${appconfig.url}/product/delete/${row._id}`).then(()=>{
+let clickHandler = (row,event) => {
+  if(event=='EDIT'){
+    axios.get(`${appconfig.url}/product/get/${row._id}`).then(()=>{
+      console.log('Sent Delete Request');
+      notify('Item has been deleted');
+      handleOpenModal();
+    });
+  }else{
+
+    
+    console.log('am row~~>',row);
+    axios.delete(`${appconfig.url}/product/delete/${row._id}`).then(()=>{
+      console.log('Sent Delete Request');
+      notify('Item has been deleted');
+      updateTableData();
+    });
+  }
+}
+
+
+
+let editRowHandler = (row) => {
+  axios.get(`${appconfig.url}/product/get/${row._id}`).then(()=>{
     console.log('Sent Delete Request');
     notify('Item has been deleted');
-    updateTableData();
+    handleOpenModal();
   });
+ 
+  //OPEN MODAL AND PUT DATA BACK TO IT
+  
 }
 
 const data = [{ id: 1, title: 'Conan the Barbarian', year: '1982' },{ id: 1, title: 'Aman', year: '1989' } ];
@@ -65,7 +88,7 @@ const columns = [
     right: true,
   },
   {
-    cell:(row) => <div><button onClick={()=>clickHandler(row)} style={{backgroundColor:'red'}} id={row.ID}>Edit</button><button onClick={()=>clickHandler(row)} style={{backgroundColor:'red'}} id={row.ID}>Delete</button></div>,
+    cell:(row) => <div><button onClick={()=>clickHandler(row,'EDIT')} style={{backgroundColor:'red'}} id={row.ID}>Edit</button><button onClick={()=>clickHandler(row,'DELETE')} style={{backgroundColor:'red'}} id={row.ID}>Delete</button></div>,
     ignoreRowClick: true,
     allowOverflow: true,
     button: true,
@@ -88,6 +111,7 @@ export default function AddProduct() {
   }, [])
 
 
+  
   let updateTableData = () => {
     fetch(`${appconfig.url}/product/all`)
     .then(response=>response.json())
@@ -106,8 +130,12 @@ export default function AddProduct() {
     return {};
   }
 
-  let handleCloseModal = () => {
+    let handleCloseModal = () => {
         setIsModalOpen(false);
+    }
+
+    let handleOpenModal = () => {
+      setIsModalOpen(true);
     }
     let setItemName = (e) => {
       console.log('am new title ', e.target.value);
