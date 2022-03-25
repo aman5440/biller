@@ -36,7 +36,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.6.0",
     "date-fns": "^2.16.1",
-    "electron": "^9.1.1",
+    "electron": "^13.6.6",
     "es6-promise": "^4.2.8",
     "fs": "0.0.1-security",
     "glob": "^7.1.6",
